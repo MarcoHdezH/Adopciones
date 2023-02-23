@@ -1,6 +1,9 @@
+CREATE DATABASE adopciones;
+
+USE adopciones;
+
 CREATE TABLE mascotas ( id INT(11) NOT NULL AUTO_INCREMENT,  
                        nombre VARCHAR(128) NOT NULL,
-                       descripcion VARCHAR(256) NOT NULL,
                        especie VARCHAR(128) NOT NULL,
                        imagen VARCHAR(64) NOT NULL,
                        estado INT(11) NOT NULL,
@@ -18,7 +21,13 @@ CREATE TABLE adopciones ( id INT(11) NOT NULL AUTO_INCREMENT,
                           KEY mascotaID (mascotaID),
                           CONSTRAINT mascotas_FK
                           FOREIGN KEY (mascotaID)
-                          REFERENCES mascotas(id)
-                          );
+                          REFERENCES mascotas(id),
+
+                          KEY usuarioID (usuarioID), 
+                          CONSTRAINT usuarios_FK
+                          FOREIGN KEY (usuarioID)
+                          REFERENCES usuarios(id));
+
+INSERT INTO mascotas(nombre,especie,imagen,estado) VALUES ("Canelita","GATO","Gato1.jpg",0);
 
 

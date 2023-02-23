@@ -16,6 +16,7 @@
 <body>
     <header class="container-fluid text-center p-5 bg-primary text-light">
         <h1>Adopción Responsable Petco</h1>
+        <hr>
     </header>
 
     <main>
