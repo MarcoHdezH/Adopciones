@@ -1,0 +1,24 @@
+CREATE TABLE mascotas ( id INT(11) NOT NULL AUTO_INCREMENT,  
+                       nombre VARCHAR(128) NOT NULL,
+                       descripcion VARCHAR(256) NOT NULL,
+                       especie VARCHAR(128) NOT NULL,
+                       imagen VARCHAR(64) NOT NULL,
+                       estado INT(11) NOT NULL,
+                       PRIMARY KEY(id));
+
+CREATE TABLE usuarios ( id INT(11) NOT NULL AUTO_INCREMENT,  
+                       nombre VARCHAR(128) NOT NULL,
+                       apellido VARCHAR(128) NOT NULL,
+                       PRIMARY KEY(id));
+
+CREATE TABLE adopciones ( id INT(11) NOT NULL AUTO_INCREMENT,
+                          mascotaID INT(11) NOT NULL,
+                          usuarioID INT(11) NOT NULL,
+                          PRIMARY KEY (id),
+                          KEY mascotaID (mascotaID),
+                          CONSTRAINT mascotas_FK
+                          FOREIGN KEY (mascotaID)
+                          REFERENCES mascotas(id)
+                          );
+
+
