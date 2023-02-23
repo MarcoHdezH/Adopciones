@@ -22,38 +22,39 @@
 
     <main>
         <section class="p-5 container-fluid">
-            <div class="row p-5">
-                <?php
+            <form action="./include/registroAdopcion.php" method="post">
+                <div class="row p-5">
+                    <?php
 
-                require './include/Conexion.php';
-                $result = mysqli_query($db, "SELECT * FROM mascotas");
-                while ($row = mysqli_fetch_array($result)) {
-                    $imagen = $row['imagen'];
-                    $nombre = $row['nombre'];
-                    $especie = $row['especie'];
-                    $estado = intval($row['estado']);
+                    require './include/Conexion.php';
+                    $result = mysqli_query($db, "SELECT * FROM mascotas");
+                    while ($row = mysqli_fetch_array($result)) {
+                        $imagen = $row['imagen'];
+                        $nombre = $row['nombre'];
+                        $especie = $row['especie'];
+                        $estado = intval($row['estado']);
 
 
-                    if($estado==1){
-                        $estadoBoton="disabled";
-                    }else{
-                        $estadoBoton="enabled";
-                    }
-                    
-                    echo "<div class='col-lg-3 text-center'>
+                        if ($estado == 1) {
+                            $estadoBoton = "disabled";
+                        } else {
+                            $estadoBoton = "enabled";
+                        }
+                        echo "<div class='col-lg-3 text-center'>
                             <div class='card p-5'>
                                 <img class='card-img-top' src='./images/$imagen' alt='$imagen'>
                                 <div class='card-body'>
                                     <h3 class='card-title text-center text-uppercase p-2 fs-4'>$nombre</h3>
                                     <p class='text-center'>$especie</p>
                                 </div>
-                                <a href='https://github.com/MarcoHdezH/Ecommerce-Alone_Bannete.git' class='text-center btn btn-outline-dark fs-2 $estadoBoton'>Adoptar</a>
+                                <input class='text-center btn btn-outline-primary $estadoBoton' type='submit' name='Mascota' value='$nombre'>
                             </div>
                           </div>";
-                }
+                    }
 
-                ?>
-            </div>
+                    ?>
+                </div>
+            </form>
         </section>
     </main>
 

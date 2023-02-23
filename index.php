@@ -38,7 +38,6 @@
 
             <p class="p-5 fs-5 text-center">
                 En Petco los animales son primero, por ello somos amantes de las mascotas y conocemos el fuerte vínculo emocional que existe entre una mascota y su familia.<br><br>
-
                 Todos los días, puedes adoptar una mascota en una tienda. Petco y nuestros socios comunitarios, diariamente ayudan a encontrar hogares para miles de perros, gatos, conejos y otras mascotas todas las semanas.
             </p>
         </section>

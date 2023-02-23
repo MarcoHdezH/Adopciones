@@ -30,4 +30,6 @@ CREATE TABLE adopciones ( id INT(11) NOT NULL AUTO_INCREMENT,
 
 INSERT INTO mascotas(nombre,especie,imagen,estado) VALUES ("Canelita","GATO","Gato1.jpg",0);
 
+INSERT INTO usuarios(nombre,apellido) VALUES ("Marco","Hernandez");
+
 
