@@ -22,13 +22,22 @@
     <main>
         <section class="container-fluid p-5">
             <div class="row">
-                <div class="col-lg-6 text-center">
-                    <a class="btn btn-outline-primary" href="Mascotas.php">Sección de Mascotas</a>
+                <div class="col-lg-3 text-center">
+                    <a class="btn btn-outline-primary btn-lg" href="Mascotas.php">Sección de Mascotas</a>
                 </div>
 
-                <div class="col-lg-6 text-center">
-                    <a class="btn btn-outline-primary" href="Usuarios.php">Sección de Usuarios</a>
+                <div class="col-lg-3 text-center">
+                    <a class="btn btn-outline-primary btn-lg" href="Usuarios.php">Sección de Usuarios</a>
                 </div>
+
+                <div class="col-lg-3 text-center">
+                    <a class="btn btn-outline-primary btn-lg" href="./include/ReporteAdopciones.php">Reporte de Adopciones</a>
+                </div>
+
+                <div class="col-lg-3 text-center">
+                    <a class="btn btn-outline-primary btn-lg" href="./include/ReporteAdopcionesSimple.php">Reporte de Adopciones Simple</a>
+                </div>
+
             </div>
         </section>
 

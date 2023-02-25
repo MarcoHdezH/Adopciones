@@ -22,7 +22,7 @@
 
     <main>
         <section class="p-5 container-fluid">
-            <form action="registroAdopcion.php" method="post">
+            <form action="./include/registroAdopcion.php" method="post">
                 <div class="row p-5">
                     <?php
 
@@ -31,25 +31,26 @@
                     while ($row = mysqli_fetch_array($result)) {
                         $imagen = $row['imagen'];
                         $nombre = $row['nombre'];
-                        $especie = $row['especie'];
                         $estado = intval($row['estado']);
 
 
                         if ($estado == 1) {
                             $estadoBoton = "disabled";
-                            $estadoAdopcion = "No Disponible";
+                            $estadoAdopcion = "Adoptado";
+                            $colorAdopcion="text-danger";
                         } else {
                             $estadoBoton = "enabled";
-                            $estadoAdopcion = "Disponible :3";
+                            $estadoAdopcion = "Disponible para Adopcion";
+                            $colorAdopcion="text-dark";
                         }
                         echo "<div class='col-lg-3 text-center'>
                             <div class='card p-5'>
                                 <img class='card-img-top' src='./images/$imagen' alt='$imagen'>
                                 <div class='card-body'>
                                     <h3 class='card-title text-center text-uppercase p-2 fs-4'>$nombre</h3>
-                                    <p class='text-center'>$estadoAdopcion</p>
+                                    <p class='text-center $colorAdopcion'>$estadoAdopcion</p>
                                 </div>
-                                <input class='text-center btn $estadoBoton' type='radio' name='Mascota' value='$nombre'>
+                                <input class='text-center btn $estadoBoton' type='radio' name='Mascota' value='$nombre' required>
                             </div>
                           </div>";
                     }
@@ -60,9 +61,6 @@
                     <?php
                     require './include/Conexion.php';
                 
-                    $result = mysqli_fetch_array(mysqli_query($db, "SELECT * FROM mascotas WHERE nombre='$mascota'"));
-                    $mascotaid = $result['id'];
-
                     echo "<h4 class='text-center'>Lista de Adoptantes. Selecciona tu Nombre</h4>";
                 
                     echo "<select class='form-select form-select-lg mb-3 text-center' name='Usuario' required>";
@@ -70,7 +68,7 @@
                     while ($row = mysqli_fetch_array($usuarios)) {
                         $id=$row['id'];
                         $contador=mysqli_query($db, "SELECT * FROM adopciones WHERE usuarioID=$id");
-                        if($contador->num_rows!=2){
+                        if($contador->num_rows<2){
                             $nombre = $row['nombre'];
                             echo "<option>$nombre</option>";
                         }
