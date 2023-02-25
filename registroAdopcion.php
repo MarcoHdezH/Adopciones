@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,11 +12,23 @@
     <link rel="stylesheet" href="./css/app.css">
 
 </head>
+
 <body>
-    <h1>Hola</h1>
+    <header class="p-5 container-fluid">
+        <h1>Hola</h1>
+    </header>
     <?php
+    require './include/Conexion.php';
+
+    $usuario = $_REQUEST['Usuario'];
     $mascota = $_REQUEST['Mascota'];
+    echo "$usuario";
+    echo "$mascota";
+
+    mysqli_query($db, "UPDATE mascotas SET estado=1 WHERE nombre='$mascota'");
+
     ?>
-    
+
 </body>
+
 </html>

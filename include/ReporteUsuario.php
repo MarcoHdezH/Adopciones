@@ -1,17 +1,34 @@
 <?php
-   require ('../fpdf185/fpdf.php');  
+   require ('../fpdf185/fpdf.php'); 
+   require ('./Conexion.php');
+
    $pdf=new FPDF();	
    $pdf->AddPage();	//Agregar una pagina
    $pdf->SetFont('Arial','B',14);	//Letra Arial, negrita (Bold), tam. 20
-     
+   
+   $nombre = $_REQUEST['Usuario'];
+   $Mensaje = "Nombre de Usuario: $nombre";
+   $result = mysqli_query($db, "SELECT * FROM usuarios WHERE nombre='$nombre' ");
+   $row = mysqli_fetch_array($result);
+   $apellido = $row['apellido'];
+   $Mensaje = "Nombre de Usuario: $nombre $apellido";
+
+   $id=$row['id'];
+   $mascotas = mysqli_query($db, "SELECT * FROM adopciones WHERE usuarioID='$id' ");
+
+   $Mensaje2 = "Numero de Mascotas Adoptadas: $mascotas->num_rows";
+
 //    $pdf->Image('videoteca.jpg',5,8,15);
-   $pdf->Cell(80,15,'        Videoteca',0,1);
+   $pdf->Cell(80,15,'Reporte de Adopcion',0,1);
    
    $pdf->SetFont('Arial','B',12);
-   $pdf->Cell(0,10,'ID       Titulo     Director    Actor',0,1);
+   $pdf->Cell(0,10,$Mensaje,0,1);
    $pdf->Cell(0,10,'_____________________________________',0,1); 
-   $pdf->SetFont('Arial','',10);	
+   $pdf->SetFont('Arial','',10);
    
+   $pdf->Cell(0,10,$Mensaje2,0,1);
+   
+
   $pdf->SetTextColor(0,0,255);
   $pdf->SetFont('','U'); 
   $pdf->Write(5,'GitHub','https://github.com/MarcoHdezH');

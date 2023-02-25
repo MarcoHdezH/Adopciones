@@ -37,9 +37,8 @@
                             <div class='card p-1'>
                                 <div class='card-body'>
                                     <h3 class='card-title text-center text-uppercase p-2 fs-4'>$nombre $apellido</h3>
-                                    <p class='text-center'>No. de Acopciones: $aux->num_rows</p>
                                 </div>
-                                <button class='text-center btn btn-outline-primary' type='submit' value='$nombre'>Ver Reporte</button>
+                                <button class='text-center btn btn-outline-primary' type='submit' name='Usuario' value='$nombre'>Ver Reporte</button>
                             </div>
                           </div>";
                     }
