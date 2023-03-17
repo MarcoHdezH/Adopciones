@@ -1,0 +1,102 @@
+:root{
+    --Blanco:#ffffff;
+    --Negro:#000000;
+    --Amarillo:#E8AE14;
+    --Rojo:#F9053C;
+}
+
+html {
+    box-sizing: border-box;
+    font-size:62.5%;
+    background-color: #21232a;
+    color: var(--Blanco);
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1rem;
+    margin: 5rem;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+h1, h2, h3, h4, h5, h6{
+    line-height: 1.2;
+    font-weight: bold;
+}
+
+h1{
+    font-size: 4.8rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+h2{
+    font-size: 4rem;
+}
+
+h3{
+    font-size: 3.2rem;
+}
+
+h4{
+    font-size: 2.8rem;
+}
+
+h5{
+    font-size: 2rem;
+}
+
+h6{
+    font-size: 1.6rem;
+}
+p{
+    font-size: 1.7rem;
+    text-align: justify;
+}
+
+label{
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+select{
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+input{
+    font-size: 2rem;
+}
+
+a{
+    text-decoration: none;
+    font-size: 2rem;
+    color: var(--Blanco);
+}
+
+img{
+    max-width: 30%;
+}
+
+input{
+    text-align: center;
+}
+
+.Plantilla{
+    text-align: center;
+}
+
+.candidatos{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    column-gap: 2rem;
+    padding: 5rem;
+}
+
+.candidatos p{
+    text-align: center;
+}
+
+.Mensaje{
+    text-align: center;
+}
