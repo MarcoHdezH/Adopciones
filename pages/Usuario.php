@@ -84,11 +84,13 @@ if (isset($_SESSION['datos']['Usuario'])) {
                 
                 <h4>Correo Electronico:</h4>
                 <P><?php echo $correo ?></P>
+
+                <a href='../include/ReporteUsuario.php' class='btn btn-dark btn-lg '> Ver Reporte de Adopcion </a>
             </div>
         </div>
         </div>
     <?php } else { ?>
-        <h1>Que hace aqui papu</h1>;
+        <h1>No deberias estar aqui</h1>;
     <?php } ?>
 </body>
 
