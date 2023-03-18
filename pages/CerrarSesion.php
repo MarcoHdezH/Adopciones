@@ -13,13 +13,20 @@
 <body>
     <?php
     session_start();
-    session_destroy();
+    $band = 0;
+    if (isset($_SESSION['datos']['Usuario'])) {
+        session_destroy();
+        echo '<div class="text-center p-5">
+                <h1 class="mb-5">Cerresta sesión de forma Correcta</h1>
+                <a class="btn btn-outline-dark" href="../index.php">Regresar al Menu Principal</a>
+              </div>';
+    } else {
+        echo '<div class="text-center p-5">
+                <h1 class="mb-5">No has iniciado Sesion</h1>
+                <a class="btn btn-outline-dark" href="../index.php">Regresar al Menu Principal</a>
+              </div>';
+    }
     ?>
-    <div class="text-center p-5">
-        <h1 class="mb-5">Cerresta sesión de forma Correcta</h1>
-        <a class="btn btn-outline-dark" href="../index.php">Regresar al Menu Principal</a>
-    </div>
-
 </body>
 
 </html>

@@ -41,10 +41,6 @@ if (isset($_SESSION['datos']['Usuario'])) {
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link active" href="Nosotros.php">¿Quienes Somos?</a>
-                        </li>
-
-                        <li class="nav-item">
                             <a class="nav-link active" href="CerrarSesion.php">Cerrar Sesión</a>
                         </li>
                     </ul>

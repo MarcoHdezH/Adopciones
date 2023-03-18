@@ -14,10 +14,6 @@ $usuario = $_SESSION['datos']['Usuario'];
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link active" href="./pages/Nosotros.php">¿Quienes Somos?</a>
-                </li>
-
-                <li class="nav-item">
                     <a class="nav-link active" href="./pages/CerrarSesion.php">Cerrar Sesión</a>
                 </li>
             </ul>

@@ -21,7 +21,10 @@
 
     $BusquedaU = mysqli_query($db, "SELECT * FROM usuarios WHERE usuario='$usuario'");
     if ($BusquedaU->num_rows === 0) {
-        echo "Usuario y/o Contraseña Invalido";
+        echo "<div class='text-center'>
+                <h2>Usuario y/o Contraseña Invalido</h2>
+                <a class='btn btn-lg btn-outline-dark' href='../pages/IniciarSesion.php'>Regresar</a>
+              </div>";
     } else {
         $BusquedaC = mysqli_query($db, "SELECT * FROM usuarios WHERE contraseña='$contraseña'");
         if ($BusquedaC->num_rows === 0) {
