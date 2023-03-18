@@ -4,7 +4,6 @@ $band=0;
 if (isset($_SESSION['datos']['Usuario'])) {
   $band=1;
 } else {
-  $usuario = "No ha iniciado Sesión";
   $band=0;
 }
 ?>

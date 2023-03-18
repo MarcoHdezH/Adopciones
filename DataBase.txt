@@ -35,6 +35,6 @@ CREATE TABLE adopciones ( id INT(11) NOT NULL AUTO_INCREMENT,
                           FOREIGN KEY (usuarioID)
                           REFERENCES usuarios(id));
 
-INSERT INTO mascotas(nombre,imagen,estado) VALUES ("Canelita","Gato1.jpg",0);
+INSERT INTO mascotas(nombre,especie,imagen,descripcion,estado) VALUES ("Canelita","Gato","Gato1.jpg","Gato con muy Buena Salud",0);
 
 INSERT INTO usuarios(usuario,contraseña,imagen,nombre,apellido,telefono,correo) VALUES ("MichiTactico","123456","Usuario1.jpg","Marco Antonio","Hernandez",7971209928,"marco7245@hotmail.com");
