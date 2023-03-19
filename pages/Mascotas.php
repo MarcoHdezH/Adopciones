@@ -8,21 +8,24 @@
     <title>Mascotas</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
 </head>
 
 <body>
 
-    <header class="container-fluid text-center p-5 bg-primary text-light">
+    <header class="container-fluid text-center p-5 bg-dark text-light">
         <h1>Nuestra Seccion de Mascotas</h1>
         <hr>
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="Mascotas.php">Mascotas</a>
+                <a class="navbar-brand" href="../index.php">Inicio</a>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" href="index.php">Regresar</a>
+                            <a class="nav-link disabled" href="Mascotas.php">Mascotas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="IniciarSesion.php">Iniciar Sesión</a>
                         </li>
                     </ul>
                     <form class="d-flex" role="search">
@@ -40,7 +43,7 @@
                 <div class="row p-5">
                     <?php
 
-                    require './include/Conexion.php';
+                    require '../include/Conexion.php';
                     $result = mysqli_query($db, "SELECT * FROM mascotas");
                     while ($row = mysqli_fetch_array($result)) {
                         $imagen = $row['imagen'];
@@ -59,45 +62,18 @@
                         }
                         echo "<div class='col-lg-3 text-center'>
                             <div class='card p-5'>
-                                <img class='card-img-top' src='./images/$imagen' alt='$imagen'>
+                                <img class='card-img-top' src='../images/mascotas/$imagen' alt='$imagen'>
                                 <div class='card-body'>
                                     <h3 class='card-title text-center text-uppercase p-2 fs-4'>$nombre</h3>
                                     <p class='text-center $colorAdopcion'>$estadoAdopcion</p>
                                 </div>
-                                <input class='text-center btn $estadoBoton' type='radio' name='Mascota' value='$nombre' required>
                             </div>
                           </div>";
                     }
                     ?>
                 </div>
-
-                <div class="container-fluid">
-                    <?php
-                    require './include/Conexion.php';
-                
-                    echo "<h4 class='text-center'>Lista de Adoptantes. Selecciona tu Nombre</h4>";
-                
-                    echo "<select class='form-select form-select-lg mb-3 text-center' name='Usuario' required>";
-                    $usuarios = mysqli_query($db, "SELECT * FROM usuarios");
-                    while ($row = mysqli_fetch_array($usuarios)) {
-                        $id=$row['id'];
-                        $contador=mysqli_query($db, "SELECT * FROM adopciones WHERE usuarioID=$id");
-                        if($contador->num_rows<2){
-                            $nombre = $row['nombre'];
-                            echo "<option>$nombre</option>";
-                        }
-                    }
-                    echo "</select>";
-                    ?>
-                </div>
-
-                <div class="text-center containter-fluid">
-                    <input type="submit" class="btn btn-outline-primary text-center btn-lg" value="Confirmar Adopcion">
-                </div>
             </form>
         </section>
     </main>
-
 </body>
-
 </html>

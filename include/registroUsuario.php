@@ -11,18 +11,21 @@
 </head>
 
 <body>
-    <h1 class="p-5 text-center uppercase">Usuario Registrado con Exito</h1>
+    <h1 class="p-5 text-center uppercase bg-dark text-light">Usuario Registrado con Exito</h1>
     <?php
         require './Conexion.php';
         $nombre = $_REQUEST['nombre'];
         $apellido = $_REQUEST['apellido'];
         $telefono = $_REQUEST['telefono'];
         $correo = $_REQUEST['correo'];
+        $usuario = $_REQUEST['usuario'];
+        $contraseña = $_REQUEST['contraseña'];
+        $imagen = $_FILES['imagen']['name'];
 
-        mysqli_query($db,"INSERT INTO usuarios(nombre,apellido,telefono,correo) VALUES ('$nombre','$apellido','$telefono','$correo')");
+        mysqli_query($db,"INSERT INTO usuarios(usuario,contraseña,imagen,nombre,apellido,telefono,correo) VALUES ('$usuario','$contraseña','$imagen','$nombre','$apellido','$telefono','$correo')");
     ?>
     <div class="text-center">
-        <a class="text-center btn btn-outline-primary" href="../Usuarios.php">Regresar</a>
+        <a class="text-center p-2 btn btn-outline-dark" href="../index.php">Regresar</a>
     </div>
 </body>
 

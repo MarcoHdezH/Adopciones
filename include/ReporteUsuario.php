@@ -1,4 +1,6 @@
 <?php
+   session_start();
+   $usuario = $_SESSION['datos']['Usuario'];
    require ('../fpdf185/fpdf.php'); 
    require ('./Conexion.php');
 
@@ -6,9 +8,9 @@
    $pdf->AddPage();	//Agregar una pagina
    $pdf->SetFont('Arial','B',14);	//Letra Arial, negrita (Bold), tam. 20
    
-   $nombre = $_REQUEST['Usuario'];
-   $result = mysqli_query($db, "SELECT * FROM usuarios WHERE nombre='$nombre' ");
+   $result = mysqli_query($db, "SELECT * FROM usuarios WHERE usuario='$usuario' ");
    $row = mysqli_fetch_array($result);
+   $nombre = $row['nombre'];
    $apellido = $row['apellido'];
    $telefono = $row['telefono'];
    $correo = $row['correo'];

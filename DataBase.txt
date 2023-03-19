@@ -1,0 +1,47 @@
+CREATE DATABASE adopciones;
+
+USE adopciones;
+
+CREATE TABLE mascotas ( id INT(11) NOT NULL AUTO_INCREMENT,  
+                       nombre VARCHAR(128) NOT NULL,
+                       especie VARCHAR(128) NOT NULL,
+                       imagen VARCHAR(64) NOT NULL,
+                       descripcion LONGTEXT,
+                       estado INT(11) NOT NULL,
+                       PRIMARY KEY(id));
+
+CREATE TABLE usuarios ( id INT(11) NOT NULL AUTO_INCREMENT,
+                       usuario VARCHAR(128) NOT NULL,
+                       contraseña VARCHAR(128) NOT NULL,
+                       imagen VARCHAR(128) NOT NULL,  
+                       nombre VARCHAR(128) NOT NULL,
+                       apellido VARCHAR(128) NOT NULL,
+                       telefono BIGINT NOT NULL,
+                       correo VARCHAR(256) NOT NULL,
+                       PRIMARY KEY(id));
+
+CREATE TABLE adopciones ( id INT(11) NOT NULL AUTO_INCREMENT,
+                          mascotaID INT(11) NOT NULL,
+                          usuarioID INT(11) NOT NULL,
+                          fecha DATE NOT NULL,
+                          PRIMARY KEY (id),
+                          KEY mascotaID (mascotaID),
+                          CONSTRAINT mascotas_FK
+                          FOREIGN KEY (mascotaID)
+                          REFERENCES mascotas(id),
+
+                          KEY usuarioID (usuarioID), 
+                          CONSTRAINT usuarios_FK
+                          FOREIGN KEY (usuarioID)
+                          REFERENCES usuarios(id));
+
+INSERT INTO mascotas(nombre,especie,imagen,descripcion,estado) VALUES ("Canelita","Gato","Gato1.jpg","Gato con muy Buena Salud",0);
+INSERT INTO mascotas(nombre,especie,imagen,descripcion,estado) VALUES ("Esquizo","Gato","Gato2.jpg","Gato con muy Buena Salud",0);
+INSERT INTO mascotas(nombre,especie,imagen,descripcion,estado) VALUES ("Solovino","Gato","Gato3.jpg","Gato con muy Buena Salud",0);
+INSERT INTO mascotas(nombre,especie,imagen,descripcion,estado) VALUES ("Pulgas","Gato","Gato4.jpg","Gato con muy Buena Salud",0);
+INSERT INTO mascotas(nombre,especie,imagen,descripcion,estado) VALUES ("Firulais","Perro","Perro1.jpg","Perro con muy Buena Salud",0);
+INSERT INTO mascotas(nombre,especie,imagen,descripcion,estado) VALUES ("Babo","Perro","Perro2.jpg","Perro con muy Buena Salud",0);
+INSERT INTO mascotas(nombre,especie,imagen,descripcion,estado) VALUES ("Papita","Perro","Perro3.jpg","Perro con muy Buena Salud",0);
+INSERT INTO mascotas(nombre,especie,imagen,descripcion,estado) VALUES ("Perrito","Perro","Perro4.jpg","Perro con muy Buena Salud",0);
+
+INSERT INTO usuarios(usuario,contraseña,imagen,nombre,apellido,telefono,correo) VALUES ("MichiTactico","123456","Usuario1.jpg","Marco Antonio","Hernandez",7971209928,"marco7245@hotmail.com");
