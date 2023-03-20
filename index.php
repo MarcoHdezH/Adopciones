@@ -1,10 +1,14 @@
 <?php
 session_start();
-$band=0;
+$band = 0;
 if (isset($_SESSION['datos']['Usuario'])) {
-  $band=1;
+  if ($_SESSION['datos']['Usuario'] == "LinceMistico01") {
+    $band = 2;
+  } else {
+    $band = 1;
+  }
 } else {
-  $band=0;
+  $band = 0;
 }
 ?>
 <!DOCTYPE html>
@@ -26,10 +30,14 @@ if (isset($_SESSION['datos']['Usuario'])) {
     <h1>Refugio de Animales Fedora's</h1>
     <hr>
     <?php
-    if($band===1){
+    if ($band === 1) {
       include './layout/HeaderUsuario.php';
-    }else{
-      include './layout/Header.php';
+    } else {
+      if ($band == 2) {
+        include './layout/HeaderRoot.php';
+      } else {
+        include './layout/Header.php';
+      }
     }
     ?>
   </header>
@@ -47,4 +55,5 @@ if (isset($_SESSION['datos']['Usuario'])) {
     </section>
   </main>
 </body>
+
 </html>
