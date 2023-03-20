@@ -103,7 +103,6 @@ if (isset($_SESSION['datos']['Usuario'])) {
                 if ($band == 1) {
                     echo "<div class='text-center'>
                     <a class='btn btn-outline-dark' href='AgregarMascota.php'>Agregar Mascota</a>
-                    <a class='btn btn-outline-dark' href='EliminarMascota.php'>Eliminar Mascota</a>
                   </div>";
                 }
                 ?>
