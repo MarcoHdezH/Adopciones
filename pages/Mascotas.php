@@ -14,7 +14,7 @@
 <body>
 
     <header class="container-fluid text-center p-5 bg-dark text-light">
-        <h1>Nuestra Seccion de Mascotas</h1>
+        <h1>Nuestra Seccion de Mascotas<br><br>Inicia Sesión para poder Adoptar</h1>
         <hr>
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">

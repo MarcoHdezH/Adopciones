@@ -40,12 +40,14 @@ if (isset($_SESSION['datos']['Usuario'])) {
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" href="MascotasUsuario.php">Mascotas</a>
+                            <a class="nav-link active" href="MascotasRoot.php">Seccion de Mascotas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled" href="Usuario.php">Mi Perfil (<?php echo $usuario ?>)</a>
+                            <a class="nav-link active" href="UsuariosRoot.php">Seccion de Usuarios</a>
                         </li>
-
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="UsuarioRoot.php">Bienvenido (<?php echo $usuario ?>)</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="CerrarSesion.php">Cerrar Sesión</a>
                         </li>
@@ -85,7 +87,6 @@ if (isset($_SESSION['datos']['Usuario'])) {
                 <h4>Correo Electronico:</h4>
                 <P><?php echo $correo ?></P>
 
-                <a href='../include/ReporteUsuario.php' class='btn btn-dark btn-lg '> Ver Reporte de Adopcion </a>
             </div>
         </div>
         </div>
